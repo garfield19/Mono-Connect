@@ -297,12 +297,13 @@ class DbOperations
     //Get account id
     public function getAccountID($code)
     {
-        $response = $this
-            ->client
-            ->request('POST', 'https://api.withmono.com/account/auth', ['body' => $code, 'headers' => ['Accept' => 'application/json', 'Content-Type' => 'application/json', 'mono-sec-key' => 'test_sk_NzQxGXjwDo4x0S2VnVi4', ],
+        return $code;
+        // $response = $this
+        //     ->client
+        //     ->request('POST', 'https://api.withmono.com/account/auth', ['body' => $code, 'headers' => ['Accept' => 'application/json', 'Content-Type' => 'application/json', 'mono-sec-key' => 'test_sk_NzQxGXjwDo4x0S2VnVi4', ],
 
-        ]);
-        return $response->getBody();
+        // ]);
+        // return $response->getBody();
     }
 
     //Get user information
