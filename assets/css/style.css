@@ -1,0 +1,59 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+  }
+
+.card-img-top{
+    width: auto;
+    height: 80px;
+    align-self: center;
+    margin: 3em 2em 0 2em;
+}
+.card-img-top-fill{
+    width: 100%;
+    align-self: center;
+    margin: 3em 2em 0 2em;
+}
+.card_title_text{
+    text-align: center;
+    font-weight: 500;
+    margin: 0 2em 0 2em;
+    flex: content;
+}
+.offer_side_bar{
+    margin: 6em 2em 0 2em;
+    line-height: 1.2em;
+    font-size: 20px;
+    font-weight: 500;
+}
+.offer_side_bar button{
+    margin-top: 3em;
+}
+.offer_amount{
+    font-size: 3.0rem;
+    font-weight: 700;
+}
+.offer_amount_prefix{
+    font-size: 15px;
+}
+.card-body-margin{
+    margin: 0 1.5em 0 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+}
+.center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.display-5{
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 5em !important;
+}
+.quick-view .modal-dialog {
+    width: 400px !important;
+}
