@@ -100,7 +100,7 @@
                         </div>
                         <button id="updateOffer" class="btn btn-primary m-r-5">
                         <i class="anticon anticon-loading m-r-5"></i>
-                        <span>Update Offer</span>
+                        <span>Get Offer</span>
                         </button>
                      </li>
                      <hr/>
@@ -125,14 +125,8 @@
                                  <p>Get <span class="text-success font-weight-bold">instant</span> loan offer and disburse to your account in 5 minutes.</p>
                               </div>
                               <div class="box">
-                                 <?php
-                                    if($loanOffer > 0){ ?>
                                  <button href="javascript:void(0);" data-toggle="modal" data-target="#quick-view" class="btn btn-success btn-tone m-r-5 m-t-20">Withdraw</button>
-                                 <?php  }else{ ?>
-                                 <button href="javascript:void(0);" data-toggle="modal" data-target="#noOfferModal" class="btn btn-success btn-tone m-r-5 m-t-20">Withdraw</button>
-                                 <?php   }
-                                    ?>
-                              </div>
+                                 </div>
                            </div>
                         </div>
                      </div>
