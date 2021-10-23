@@ -6,6 +6,9 @@ $conn = mysqli_connect(CLEARDB_SERVER, CLEARDB_USERNAME, CLEARDB_PASSWORD, CLEAR
 require_once ('../vendor/autoload.php');
 $account_id = $_SESSION['accountID'];
 
+echo $account_id;
+die();
+
 $client = new \GuzzleHttp\Client();
 
 $reference = $_GET['reference'];
