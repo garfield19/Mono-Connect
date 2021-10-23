@@ -7,18 +7,19 @@ const copyToClipboard = text => {
     document.body.removeChild(elm);
 };
 var connect;
+var code;
 var config = {
     key: "test_pk_rsBlgOY1zfY1NzjfP9bk",
     onSuccess: function(response) {
         copyToClipboard(response.code);
         console.log(JSON.stringify(response));
-        //alert(JSON.stringify(response));
+        code = response;
 
         $("#connect-btn").toggleClass("is-loading");
         $.ajax({
             url: 'api/public/api/v1/getAccountID',
             type: 'post',
-            data: JSON.stringify(response),
+            data: JSON.stringify(code),
             dataType: 'json',
             success: function(response) {
                 console.log(response.id);
