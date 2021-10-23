@@ -41,10 +41,10 @@ if ($status == "successful")
   WHERE account_id = '$account_id'";
     echo $amount;
     mysqli_query($conn, $updateDebtSql) or die(mysqli_error($conn));
-    header("location:../../home.php?status=$status");
+    header("location:https://mono-connect.herokuapp.com/home.php?status=$status");
 }
 else
 {
-    header("location:../../home.php?status=$status");
+    header("location:https://mono-connect.herokuapp.com/home.php?status=$status");
 }
 

@@ -109,7 +109,7 @@
       success: function(data) {
           console.log(data);
           if(data = "1"){
-            window.location.replace("http://localhost/app/home.php");
+            window.location.replace("https://mono-connect.herokuapp.com/home.php");
           }else{
             errorToast();
             $("#submitForm").removeClass("is-loading");
