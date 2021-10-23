@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once ('../includes/Constants.php');
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+//$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = mysqli_connect(CLEARDB_SERVER, CLEARDB_USERNAME, CLEARDB_PASSWORD, CLEARDB_DB);
 require_once ('../vendor/autoload.php');
 $account_id = $_SESSION['accountID'];
 
