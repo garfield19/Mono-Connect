@@ -31,10 +31,11 @@ $app->run();
 //get accountID
 function getAccountID($request)
 {
+
     $code = $request->getBody();
-    // $db = new DbOperations;
-    // $result = $db->getAccountID($code);
-    echo $code;
+    $db = new DbOperations;
+    $result = $db->getAccountID($code);
+    echo $result;
 }
 
 function withdrawLoan()

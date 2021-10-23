@@ -14,21 +14,20 @@ var config = {
         copyToClipboard(response.code);
         console.log(JSON.stringify(response));
         code = response;
-
         $("#connect-btn").toggleClass("is-loading");
         $.ajax({
             url: 'api/public/api/v1/getAccountID',
             type: 'post',
             data: JSON.stringify(code),
             dataType: 'json',
-            success: function(response) {
-                console.log(response);
-                var account_id = response.id;
+            success: function(response2) {
+                console.log(response2);
+                var account_id = response2.id;
                 $.ajax({
                     url: 'api/public/api/v1/getUserInformation',
                     type: 'get',
                     data: {
-                        'account_id': response['id']
+                        'account_id': response2['id']
                     },
                     dataType: 'json',
                     success: function(response) {
@@ -52,6 +51,7 @@ var config = {
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 errorToast();
+                console.log(errorThrown);
                 $("#connect-btn").removeClass("is-loading");
             }
         });
