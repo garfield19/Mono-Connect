@@ -22,7 +22,7 @@ var config = {
             data: JSON.stringify(code),
             dataType: 'json',
             success: function(response) {
-                console.log(response.id);
+                console.log(response);
                 var account_id = response.id;
                 $.ajax({
                     url: 'api/public/api/v1/getUserInformation',

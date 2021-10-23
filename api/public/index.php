@@ -32,9 +32,9 @@ $app->run();
 function getAccountID($request)
 {
     $code = $request->getBody();
-    $db = new DbOperations;
-    $result = $db->getAccountID($code);
-    echo $result;
+    // $db = new DbOperations;
+    // $result = $db->getAccountID($code);
+    echo $code;
 }
 
 function withdrawLoan()
