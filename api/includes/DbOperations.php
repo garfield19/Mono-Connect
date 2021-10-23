@@ -55,7 +55,7 @@ class DbOperations
         $myObj->reference = $randomTenDigits;
         $myObj->description = "Loan replayment";
         $myObj->type = "onetime-debit";
-        $myObj->redirect_url = "http://localhost/app/api/callback/verify-payment.php";
+        $myObj->redirect_url = "https://mono-connect.herokuapp.com/app/api/callback/verify-payment.php";
 
         $jsonData = json_encode($myObj);
 

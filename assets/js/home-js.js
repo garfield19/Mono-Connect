@@ -14,9 +14,6 @@ $('#updateOffer').click(function(e) {
             $("#updateOffer").removeClass("is-loading");
             $("#offer_amount").text(response);
             $("#maxOffer").text(response);
-            location.reload(); 
-
-
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
