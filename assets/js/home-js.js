@@ -71,6 +71,7 @@ $('#processLoan').click(function(e) {
 
             if (response.status == 1) {
                 successToast();
+                ajaxFetchTransactions();
             } else {
                 errorToast();
             }
@@ -158,6 +159,7 @@ function getAccountData() {
             errorToast();
         }
     });
+    ajaxFetchTransactions();
 
 };
 
