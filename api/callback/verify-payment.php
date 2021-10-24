@@ -42,8 +42,8 @@ if ($status == "successful")
   WHERE account_id = '$account_id'";
     echo $amount;
 
-    $insertTransaction = "INSERT INTO `transactions`(`account_id`, `amount`, `type`, `reference`) 
-    VALUES ( $account_id, $amount,'Loan Payment',$reference)";
+    $insertTransaction = "INSERT INTO `transactions` (`account_id`, `amount`, `type`, `reference`) 
+    VALUES ( '$account_id', '$amount','Loan Payment','$reference')";
 
     mysqli_query($conn, $updateDebtSql) or die(mysqli_error($conn));
 

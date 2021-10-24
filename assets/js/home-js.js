@@ -191,6 +191,7 @@ function ajaxFetchTransactions(volunteerId) {
 
                 var len = response.length;
                 $('#transactions').val('');
+                $('#transactions').html('');
                 for (var i = 0; i < len; i++) {
                     var date_added = response[i].date_added;
                     var amount = response[i].amount;
