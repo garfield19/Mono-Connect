@@ -41,7 +41,14 @@ if ($status == "successful")
   SET amount = amount - $amount
   WHERE account_id = '$account_id'";
     echo $amount;
+
+    $insertTransaction = "INSERT INTO `transactions`(`account_id`, `amount`, `type`, `reference`) 
+    VALUES ( $account_id, $amount,'Loan Payment',$reference)";
+
     mysqli_query($conn, $updateDebtSql) or die(mysqli_error($conn));
+
+    mysqli_query($conn, $insertTransaction) or die(mysqli_error($conn));
+
     header("location:https://mono-connect.herokuapp.com/home.php?status=$status");
 }
 else

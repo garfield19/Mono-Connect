@@ -64,6 +64,14 @@ function getAccountData($request)
     echo $result;
 }
 
+function getTransactions($request)
+{
+    $account_id = $request->getQueryParam("account_id");
+    $db = new DbOperations;
+    $result = $db->getTransactions($account_id);
+    echo $result;
+}
+
 function payBackLoan($request)
 {
     $account_id = $request->getQueryParam("account_id");

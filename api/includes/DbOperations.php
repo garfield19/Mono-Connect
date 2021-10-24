@@ -106,15 +106,15 @@ class DbOperations
     }
 
     //add new transaction
-    private function addTransaction($con, $accountID, $amount, $type)
+    private function addTransaction($con, $accountID, $amount, $type, $ref)
     {
-        $ins = "INSERT INTO `transactions`(`account_id`, `amount`, `type`) 
-         VALUES ( ?, ?,?)";
+        $ins = "INSERT INTO `transactions`(`account_id`, `amount`, `type`, `reference`) 
+         VALUES ( ?, ?,?,?)";
 
         $stmt3 = $this
             ->con
             ->prepare($ins);
-        $stmt3->bind_param('sss', $accountID, $amount, $type);
+        $stmt3->bind_param('ssss', $accountID, $amount, $type, $ref);
         if ($stmt3->execute())
         {
             return 1;
@@ -199,6 +199,37 @@ class DbOperations
 
     }
 
+
+    public function getTransactions($account_id)
+    {
+        $stmt1 = $this
+            ->con
+            ->prepare("SELECT `reference`, `type`, `date_added`, `amount` from transactions WHERE account_id = ?");
+        if ($stmt1 === false)
+        {
+            die($this
+                ->con
+                ->error);
+        }
+        $stmt1->bind_param('s', $account_id);
+        $stmt1->execute();
+        $stmt1->bind_result($reference, $type, $date_added, $amount);
+
+        $a = array();
+        while ($stmt1->fetch())
+        {
+            $b = array();
+            $b["reference"] = $reference;
+             $b["type"] = $type;
+             $b["date_added"] = $date_added;
+             $b["amount"] = $amount;
+             array_push($a, $b);
+        }
+
+        return json_encode($a);
+
+    }
+
     //withdraw loan
     public function withdrawLoan()
     {
@@ -219,8 +250,10 @@ class DbOperations
 
         $debt = $amount + $amount * 0.01;
 
+        $randomTenDigits = rand(1111111111, 9999999999);
+
         $debtUpdate = $this->updateDebt($this->con, $account_id, $debt);
-        $trasactionUpdate = $this->addTransaction($this->con, $account_id, $amount, 'Withdrawal');
+        $trasactionUpdate = $this->addTransaction($this->con, $account_id, $amount, 'Withdrawal',$randomTenDigits);
 
         if ($debtUpdate == 1 && $trasactionUpdate == 1)
         {

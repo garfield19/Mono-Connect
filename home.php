@@ -185,7 +185,7 @@
                                              <th>Reference</th>
                                           </tr>
                                        </thead>
-                                       <tbody>
+                                       <tbody id="transactions">
                                        </tbody>
                                     </table>
                                  </div>

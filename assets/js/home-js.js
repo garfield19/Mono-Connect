@@ -160,3 +160,61 @@ function getAccountData() {
     });
 
 };
+
+function ajaxFetchTransactions(volunteerId) {
+
+
+    $.ajax({
+
+        url: 'api/public/api/v1/getTransactions',
+        type: 'get',
+        data: {
+            'account_id': account_id
+        },
+        dataType: "JSON",
+        error: function(xhr, status, error) {
+            console.log(status);
+            console.log(xhr.responseText);
+        },
+        success: function(response) {
+            console.log(response);
+
+
+            if (response.error_message == "error") {
+
+                console.log("Error fetching data");
+
+            } else {
+            
+
+                var len = response.length;
+                $('#transactions').val('');
+                for (var i = 0; i < len; i++) {
+                    var date_added = response[i].date_added;
+                    var amount = response[i].amount;
+                    var type = response[i].type;
+                    var reference = response[i].reference;
+
+
+                    var output = '';
+                    output += '<tr>';
+                   
+                    output += '<td>' + date_added + '</td> ';
+                    output += '<td>' + amount + '</td> ';
+                    output += '<td>' + type + '</td> ';
+                    output += '<td>' + reference + '</td> ';
+                   
+                    output += '</tr';
+                    $('#transactions').append(output);
+
+                }
+                $('#transactions').html($.trim($('#transactions').html()))
+
+
+            }
+        }
+
+    });
+   
+
+}

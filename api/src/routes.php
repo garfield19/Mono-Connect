@@ -30,6 +30,7 @@ return function (App $app) {
             $app->post('/withdrawLoan','withdrawLoan');
             $app->get('/getCurrentDebt','getCurrentDebt');
             $app->get('/getAccountData','getAccountData');
+            $app->get('/getTransactions','getTransactions');
             $app->get('/payBackLoan', 'payBackLoan');
 
 
