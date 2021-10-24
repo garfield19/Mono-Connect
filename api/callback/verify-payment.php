@@ -40,7 +40,7 @@ if ($status == "successful")
     $updateDebtSql = "UPDATE debt 
   SET amount = amount - $amount
   WHERE account_id = '$account_id'";
-    echo $amount;
+    //echo $amount;
 
     $insertTransaction = "INSERT INTO `transactions` (`account_id`, `amount`, `type`, `reference`) 
     VALUES ( '$account_id', '$amount','Repayment','$reference')";

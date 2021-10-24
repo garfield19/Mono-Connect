@@ -6,7 +6,7 @@
        header('location:login.php');
    }
    $account_id =  $_SESSION['accountID'];
-   echo $account_id;
+   //echo $account_id;
    ?>
 <!DOCTYPE html>
 <html lang="en">
