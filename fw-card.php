@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => '{{BASE_API_URL}}/virtual-account-numbers',
+  CURLOPT_URL => ' https://api.flutterwave.com/v3/virtual-account-numbers',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -16,14 +16,14 @@ curl_setopt_array($curl, array(
     "is_permanent": false,
     "bvn": ,
     "tx_ref": "VA12",
-    "phonenumber": 08109328188,
-    "firstname": "Angela",
-    "lastname": "Ashley",
-    "narration": "Angela Ashley-Osuzoka"
+    "phonenumber": 08143731476,
+    "firstname": "Damilola",
+    "lastname": "Oyediran",
+    "narration": "Damilola Side Hustle" 
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json',
-    'Authorization: Bearer {SEC_KEY}'
+    'Authorization: Bearer FLWSECK-1dc38e4e25c8f6fe5b15a7f3c4cb8874-X'
   ),
 ));
 
